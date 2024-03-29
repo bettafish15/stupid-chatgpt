@@ -1,0 +1,140 @@
+{
+  "ignorePatterns": [
+    "vite.config.ts",
+    "build"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ],
+        "extensions": [
+          ".js",
+          ".json",
+          ".tsx",
+          ".ts",
+          ".jsx"
+        ]
+      }
+    }
+  },
+  "extends": [
+    "react-app",
+    "eslint-config-prettier",
+    "prettier",
+    // "airbnb",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "complexity": [
+      "error",
+      {
+        "max": 100
+      }
+    ],
+    "no-unused-expressions": [
+      0
+    ],
+    "camelcase": [
+      0
+    ],
+    "react/require-default-props": [
+      0
+    ],
+    "react/jsx-props-no-spreading": [
+      0
+    ],
+    "no-param-reassign": [
+      0
+    ],
+    "import/prefer-default-export": [
+      0
+    ],
+    "react/prop-types": [
+      0
+    ],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      2,
+      {
+        "devDependencies": true
+      }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "off"
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      "off"
+    ],
+    "no-shadow": "off",
+    "no-console": "off",
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/react-in-jsx-scope": [
+      "off"
+    ],
+    "prettier/prettier": [
+      "warn",
+      {
+        "arrowParens": "always",
+        "semi": false,
+        "tabWidth": 2,
+        "endOfLine": "auto",
+        "useTabs": false,
+        "singleQuote": true,
+        "printWidth": 120,
+        "jsxSingleQuote": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/**/*Slice.ts"
+      ],
+      // avoid state param assignment
+      "rules": {
+        "no-param-reassign": [
+          "error",
+          {
+            "props": false
+          }
+        ]
+      }
+    }
+  ]
+}
